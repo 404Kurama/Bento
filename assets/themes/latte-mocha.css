@@ -31,7 +31,7 @@
 
   /* Fonts Color */
   --fg: var(--mocha-text); /* Foreground color */
-  --sfg: var(--mocha-pink); /* Secondary Foreground color */
+  --sfg: var(--mocha-rosewater); /* Secondary Foreground color */
 
   /* Image background  */
   --imgcol: linear-gradient(
