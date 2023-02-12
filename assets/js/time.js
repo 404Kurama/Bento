@@ -4,28 +4,27 @@
 // Set time and Date
 
 window.onload = displayClock();
-function displayClock() {
-	const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+async function displayClock() {
+  var min = "43";
+  var hh = "21";
+  var ampm = "";
 
-	var d = new Date();
-	var mm = monthNames[d.getMonth()];
-	var dd = d.getDate();
-	var min = (mins = ('0' + d.getMinutes()).slice(-2));
-	var hh = d.getHours();
-	var ampm = '';
+  var response = await fetch("http://worldtimeapi.org/api/ip");
+  var data = await response.json();
+  var date = new Date(data.datetime);
 
-	if (CONFIG.twelveHourFormat) {
-		ampm = hh >= 12 ? ' PM' : ' AM';
-		hh = hh % 12;
-		hh = hh ? hh : 12;
-	}
+  min = ("0" + date.getMinutes()).slice(-2);
+  hh = date.getHours();
 
-	document.getElementById('hour').innerText = hh;
-	document.getElementById('separator').innerHTML = ' : ';
-	document.getElementById('minutes').innerText = min + ampm;
+  if (CONFIG.twelveHourFormat) {
+    ampm = hh >= 12 ? " PM" : " AM";
+    hh = hh % 12;
+    hh = hh ? hh : 12;
+  }
 
-	document.getElementById('month').innerText = mm;
-	document.getElementById('day').innerText = dd;
+  document.getElementById("hour").innerText = hh;
+  document.getElementById("separator").innerHTML = " : ";
+  document.getElementById("minutes").innerText = min + ampm;
 
-	setTimeout(displayClock, 1000);
+  setTimeout(displayClock, 1000);
 }
