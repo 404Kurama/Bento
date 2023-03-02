@@ -4,7 +4,6 @@
 // Set theme based on Configurations and Preferences
 
 let darkTheme = localStorage.getItem('darkTheme');
-const themeToggle = document.querySelector('#themeButton');
 const bodyBackground = document.getElementById('#body');
 
 setTheme();
@@ -21,14 +20,12 @@ function setTheme() {
 const enableDark = () => {
 	document.body.classList.add('darktheme');
 	localStorage.setItem('darkTheme', 'enabled');
-	themeToggle.innerHTML = `<i id="themeButton__icon" icon-name="sun"></i>`;
 	lucide.createIcons();
 };
 
 const disableDark = () => {
 	document.body.classList.remove('darktheme');
 	localStorage.setItem('darkTheme', null);
-	themeToggle.innerHTML = `<i id="themeButton__icon" icon-name="moon"></i>`;
 	lucide.createIcons();
 };
 
