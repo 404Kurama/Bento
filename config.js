@@ -79,7 +79,7 @@ const CONFIG = {
       id: "6",
       name: "Music",
       icon: "headphones",
-      link: "https://www.spotify.com",
+      link: "spotify://",
     },
   ],
 };
