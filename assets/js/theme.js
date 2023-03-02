@@ -37,15 +37,6 @@ if (darkTheme === 'enabled') {
 	disableDark();
 }
 
-themeToggle.addEventListener('click', () => {
-	darkTheme = localStorage.getItem('darkTheme');
-	if (darkTheme !== 'enabled') {
-		enableDark();
-	} else {
-		disableDark();
-	}
-});
-
 if (CONFIG.imageBackground) {
 	document.body.classList.add('withImageBackground');
 }
