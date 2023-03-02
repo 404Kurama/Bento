@@ -9,9 +9,15 @@ async function displayClock() {
   var hh = "21";
   var ampm = "";
 
-  var response = await fetch("https://worldtimeapi.org/api/ip");
-  var data = await response.json();
-  var date = new Date(data.datetime);
+  var response = await fetch("https://worldtimeapi.org/api/i");
+  var date = new Date(0)
+  
+  if (response.status == 200) {
+    var data = await response.json();
+    date = new Date(data.datetime);
+  } else {
+    date = new Date()
+  }
 
   min = ("0" + date.getMinutes()).slice(-2);
   hh = date.getHours();
@@ -26,5 +32,5 @@ async function displayClock() {
   document.getElementById("separator").innerHTML = " : ";
   document.getElementById("minutes").innerText = min + ampm;
 
-  setTimeout(displayClock, 1000);
+  setTimeout(displayClock, 1);
 }
