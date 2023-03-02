@@ -35,6 +35,13 @@
 		<!-- Config  -->
 		<script src="config.js"></script>
 
+		<!-- Fix Internet Suck -->
+		<script>
+			if (!lucide) {
+				window.location.reload()
+			}
+		</script>
+
 		<!-- Scripts  -->
 		<script src="assets/js/layout.js"></script>
 		<script src="assets/js/theme.js"></script>
@@ -51,6 +58,7 @@
 			lucide.createIcons();
 		</script>
 
+		<!-- Auto Dar Theme -->
 		<script>
 			enableDark()
 		</script>
