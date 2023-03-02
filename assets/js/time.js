@@ -9,7 +9,7 @@ async function displayClock() {
   var hh = "21";
   var ampm = "";
 
-  var response = await fetch("https://worldtimeapi.org/api/i");
+  var response = await fetch("https://worldtimeapi.org/api/ip");
   var date = new Date(0)
   
   if (response.status == 200) {
